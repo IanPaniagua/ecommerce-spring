@@ -7,14 +7,13 @@ import jakarta.persistence.Id;
 
 @Entity(name = "categories")
 public class Category {
-    private static long idCounter = 1;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
     private String categoryName;
 
     public Category(Long categoryId, String categoryName) {
-        this.categoryId = idCounter++;
+        this.categoryId = categoryId;
         this.categoryName = categoryName;
     }
 
